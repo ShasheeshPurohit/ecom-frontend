@@ -7,16 +7,16 @@ export default function Footer() {
       {/* <p className="footer-text">Follow us on:</p> */}
       <ul className="footer-links">
         <li>
-          <i class="fab fa-facebook-square facebook"></i>
+          <i className="fab fa-facebook-square facebook"></i>
         </li>
         <li>
-          <i class="fab fa-instagram instagram"></i>
+          <i className="fab fa-instagram instagram"></i>
         </li>
         <li>
-          <i class="fab fa-twitter-square twitter"></i>
+          <i className="fab fa-twitter-square twitter"></i>
         </li>
         <li>
-          <i class="fab fa-github github"></i>
+          <i className="fab fa-github github"></i>
         </li>
       </ul>
     </footer>

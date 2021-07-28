@@ -5,14 +5,14 @@ import ProductCard from "../../Components/Cards/Product/ProductCard";
 
 export default function Cart() {
   const { state, dispatch } = useCart();
-  console.log(state);
+  console.log(state)
   return (
     <div>
       <h4>Your Cart:</h4>
       <div className="cart-display">
         {state.map((item) => {
           return (
-            <div className="cart-product-display">
+            <div key={item.id} className="cart-product-display">
               <ProductCard
                 item={item}
                 buttonText={"Remove"}

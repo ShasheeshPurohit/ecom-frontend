@@ -18,21 +18,32 @@ export function useCart() {
 const cartReducer = (state, { type, payload }) => {
   switch (type) {
     case "ADD":
-      return (state = [...state, { ...payload, quantity: 1 }]);
+      let flag = 0;
+      state.map((item)=>{
+        if(item.id===payload.id){
+          flag = 1
+        }
+      })
+      if(flag === 0){
+        state = [...state, { ...payload, cartQty: 1, inCart:true }];
+        return state;
+      }
+      console.log(state)
+      return state;
 
     case "INCREMENT":
       return state.map((item) => {
         if (item.id === payload.id) {
-          return { ...payload, quantity: payload.quantity + 1 };
+          return { ...payload, cartQty: payload.cartQty + 1 };
         }
         return item;
       });
 
     case "DECREMENT":
-      if (payload.quantity > 1) {
+      if (payload.cartQty > 1) {
         return state.map((item) => {
           if (item.id === payload.id) {
-            return { ...payload, quantity: payload.quantity - 1 };
+            return { ...payload, cartQty: payload.cartQty - 1 };
           }
           return item;
         });
