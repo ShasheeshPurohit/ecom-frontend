@@ -1,0 +1,18 @@
+.filter-menu {
+  /* width: 15rem; */
+  margin: 0.5rem;
+  border: none;
+  /* border: 1px solid black; */
+}
+
+.sort-options,
+.filter-options {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sort-options > div,
+.filter-options > div {
+  margin: 0.5rem 0;
+}

@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,400;1,700&display=swap");
+
+.App {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.route-screen {
+  min-height: 70vh;
+  width: 100%;
+}

@@ -1,0 +1,35 @@
+.product-page-layout {
+  margin-top: 4rem;
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "menu prd prd prd"
+    "menu prd prd prd"
+    "menu prd prd prd";
+}
+
+/*********** Filter Menu *************/
+
+.filter-menu {
+  width: 95%;
+  grid-area: menu;
+  background-color: beige;
+  border-radius: 10px;
+  /* border: 1px solid red; */
+}
+
+/********** Product-Section**********/
+.products-section {
+  padding-left: 1rem;
+  width: 99%;
+  grid-area: prd;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card-display {
+  margin: 1rem 0.5rem;
+}
