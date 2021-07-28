@@ -18,7 +18,7 @@ export function useCart() {
 const cartReducer = (state, { type, payload }) => {
   switch (type) {
     case "ADD":
-      return [[...state, { ...payload, quantity: 1 }]];
+      return (state = [...state, { ...payload, quantity: 1 }]);
 
     case "INCREMENT":
       return state.map((item) => {
