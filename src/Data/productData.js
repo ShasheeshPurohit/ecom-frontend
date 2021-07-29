@@ -11,7 +11,7 @@ export const productData = [...Array(20)].map((item) => ({
   qty: Math.floor(Math.random() * 101) + 1,
   inCart: false,
   addQty: 0,
-  wishListed: true,
+  wishlisted: false,
   cartQty: 0,
   offer: faker.random.arrayElement([
     "Save 50",

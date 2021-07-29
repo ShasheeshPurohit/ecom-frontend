@@ -5,11 +5,18 @@ import ProductCard from "../../Components/Cards/Product/ProductCard";
 
 export default function Cart() {
   const { state, dispatch } = useCart();
-  console.log(state)
+  function totalPrice(){
+    let total = 0;
+    state.map((item)=>{
+      total+=item.price
+    })
+    return total
+  }
   return (
     <div>
-      <h4>Your Cart:</h4>
       <div className="cart-display">
+      {totalPrice()===0?"No items in cart":<h4>Total: Rs. {totalPrice()}</h4>}
+      <div className="cart-items">
         {state.map((item) => {
           return (
             <div key={item.id} className="cart-product-display">
@@ -23,6 +30,7 @@ export default function Cart() {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );

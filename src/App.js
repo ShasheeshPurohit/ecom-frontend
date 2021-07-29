@@ -5,6 +5,7 @@ import Products from "./pages/products/Products";
 import Cart from "./pages/Cart/Cart";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
+import Wishlist from "./pages/Wishlist/Wishlist";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist/>} />
         </Routes>
       </div>
       <Footer />

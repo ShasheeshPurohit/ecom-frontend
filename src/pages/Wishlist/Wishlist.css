@@ -1,0 +1,9 @@
+.wishlist-display {
+    margin: 4rem auto;
+    display: flex;
+  }
+  
+  .wishlist-product-display {
+    margin: 0.8rem;
+  }
+  

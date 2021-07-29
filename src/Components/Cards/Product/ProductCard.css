@@ -5,14 +5,40 @@
   border-radius: 10px;
   justify-content: space-between;
   width: 11rem;
-  padding: 0.5rem;
+  padding: 0 0 0.5rem 0;
   align-items: center;
   border: 1px solid black;
 }
 
-.product-card > img {
-  height: 15rem;
+.product-image {
+  height: 25rem;
+  position: relative;
   width: 100%;
+  /* border: 1px solid red; */
+}
+
+.product-image > img{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.wishlist-icon{
+  position: absolute;
+  top: 0.2rem;
+  color: white;
+  font-size: 1.5rem;
+  right: 0.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.wishlist-icon:hover{
+  transform: scale(1.1);
+}
+
+.wishlist-icon:active{
+  transform: scale(0.9);
 }
 
 /********** Button ***********/
