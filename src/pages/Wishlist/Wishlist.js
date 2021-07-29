@@ -19,6 +19,7 @@ export default function Wishlist() {
                 buttonHandler={() =>
                   wishlist.dispatch({ type: "REMOVE", payload: item })}
                   displayIcon={"none"}
+                displayQuantitySection={"none"}
               />
             </div>
           );

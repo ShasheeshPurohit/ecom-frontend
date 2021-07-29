@@ -43,6 +43,7 @@ export default function Products() {
                   }
                 }}
                 wishlishtIconColor={iconColor(item)}
+                displayQuantitySection={"none"}
               />
             </div>
           );

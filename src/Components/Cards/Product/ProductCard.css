@@ -41,6 +41,17 @@
   transform: scale(0.9);
 }
 
+/********* Quantity Section *****/
+
+.quantity-buttons > i{
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.quantity-value{
+  display: inline;
+}
+
 /********** Button ***********/
 
 .add-cart-button {
@@ -63,3 +74,5 @@
 .add-cart-button:active {
   transform: translateY(0.2px);
 }
+
+

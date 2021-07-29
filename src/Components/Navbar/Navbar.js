@@ -31,9 +31,7 @@ export default function Navbar() {
             </li>
             
           </ul>
-          <div className="search-box">
-            <input placeholder="search"></input>
-          </div>
+          
         </div>
       </nav>
     </div>

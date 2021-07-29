@@ -8,7 +8,7 @@ export default function Cart() {
   function totalPrice(){
     let total = 0;
     state.map((item)=>{
-      total+=item.price
+      total+= (item.price)*item.cartQty
     })
     return total
   }
@@ -26,6 +26,10 @@ export default function Cart() {
                 buttonHandler={() =>
                   dispatch({ type: "REMOVE", payload: item })
                 }
+                quantity={item.cartQty}
+                incrementButtonHandler={()=> dispatch({type:"DECREMENT", payload:item})}
+                decrementButtonHandler={()=> dispatch({type:"INCREMENT", payload:item})}
+                displayIcon={"none"}
               />
             </div>
           );
