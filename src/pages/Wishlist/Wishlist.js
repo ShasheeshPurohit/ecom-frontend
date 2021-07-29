@@ -8,9 +8,9 @@ export default function Wishlist() {
 
   return (
     <div>
-      <h4>Your Wishlist:</h4>
       <div className="wishlist-display">
-        {wishlist.state.map((item) => {
+        {wishlist.state.length===0?"Wishlist is empty":
+        (wishlist.state.map((item) => {
           return (
             <div key={item.id} className="wishlist-product-display">
               <ProductCard
@@ -22,7 +22,7 @@ export default function Wishlist() {
               />
             </div>
           );
-        })}
+        }))}
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 .wishlist-display {
     margin: 4rem auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   .wishlist-product-display {
