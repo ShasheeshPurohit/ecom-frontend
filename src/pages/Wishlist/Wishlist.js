@@ -1,23 +1,24 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import "./Wishlist.css";
 import { useWishlist } from "../../Context/WishlistContext";
 import ProductCard from "../../Components/Cards/Product/ProductCard";
 
 export default function Wishlist() {
-  const wishlist = useWishlist();
+  const {wishState, removeFromWishList} = useWishlist();
 
   return (
     <div>
       <div className="wishlist-display">
-        {wishlist.state.length===0?"Wishlist is empty":
-        (wishlist.state.map((item) => {
+        {wishState.length===0?"Wishlist is empty":
+        (wishState.map((item) => {
           return (
             <div key={item.id} className="wishlist-product-display">
               <ProductCard
                 item={item}
+                itemName={<Link to={`/products/${item.id}`} className="product-name">{item.name}</Link>}
                 buttonText={"Remove"}
-                buttonHandler={() =>
-                  wishlist.dispatch({ type: "REMOVE", payload: item })}
+                buttonHandler={() =>removeFromWishList(item)}
                   displayIcon={"none"}
                 displayQuantitySection={"none"}
               />

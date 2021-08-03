@@ -6,19 +6,22 @@ import { CartProvider } from "./Context/CartContext";
 import {WishlistProvider} from "./Context/WishlistContext";
 
 import App from "./App";
+import { AuthProvider } from "./Context/AuthContext";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <StrictMode>
-    <FilterProvider>
-      <CartProvider>
-        <WishlistProvider>
-        <Router>
-          <App />
-        </Router>
-        </WishlistProvider>
-      </CartProvider>
-    </FilterProvider>
+    <Router>
+     <AuthProvider>
+      <FilterProvider>
+        <CartProvider>
+          <WishlistProvider>
+            <App />
+          </WishlistProvider>
+        </CartProvider>
+      </FilterProvider>
+     </AuthProvider>
+    </Router>
   </StrictMode>,
   rootElement
 );

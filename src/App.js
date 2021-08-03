@@ -6,6 +6,10 @@ import Cart from "./pages/Cart/Cart";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Wishlist from "./pages/Wishlist/Wishlist";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
+import PrivateRoute from "./utils/privateRoute";
 
 export default function App() {
   return (
@@ -15,8 +19,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist/>} />
+          <Route path="/products/:productId" element={<ProductPage/>} />
+          <PrivateRoute path="/cart" element={<Cart />} />
+          <PrivateRoute path="/wishlist" element={<Wishlist/>} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
         </Routes>
       </div>
       <Footer />

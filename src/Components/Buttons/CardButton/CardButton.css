@@ -1,0 +1,63 @@
+/********** Button ***********/
+
+.add-cart-button {
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: beige;
+    color: black;
+    width: 8rem;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 0.2rem;
+    border: none;
+    height: 2rem;
+    transition: all 0.2s;
+    outline: none;
+    margin-top: -1.5rem;
+  }
+  
+  .add-cart-button:hover {
+    transform: scale(1.1);
+    color: beige;
+    background-color: black;
+  }
+  
+  .add-cart-button:active {
+    transform: translateY(0.2px);
+  }
+
+  .add-cart-button-product-page{
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .add-wishlist-button-product-page{
+    background-color: rgba(189, 0, 0, 0.8);
+  }
+  
+
+  .add-cart-button-product-page, .add-wishlist-button-product-page {
+    text-transform: uppercase;
+    cursor: pointer;
+    color: beige;
+    font-size: 1.2rem;
+    width: 12rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: none;
+    transition: all 0.2s;
+    outline: none;
+    margin-top: -1.5rem;
+  }
+  
+  .add-cart-button-product-page:hover, .add-wishlist-button-product-page:hover {
+    transform: scale(1.1);
+  }
+  
+  .add-cart-button-product-page:active, .add-wishlist-button-product-page:active {
+    transform: translateY(0.2px);
+  }
+
+  
+
+  
+

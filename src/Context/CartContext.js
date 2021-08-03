@@ -1,62 +1,74 @@
+const axios = require('axios');
 import { createContext, useContext, useReducer, useEffect } from "react";
+import { baseurl } from "../utils/apiCalls";
+import { useAuth } from "./AuthContext";
+// import { cartReducer } from "./Reducers/CartReducer";
+
 
 export const CartContext = createContext();
 
-export function CartProvider({ children }) {
+export const CartProvider = ({ children }) => {
+  const{token} = useAuth()
   const [state, dispatch] = useReducer(cartReducer, []);
+  
+    useEffect(() => {
+    (async function () {
+      try{
+      const response = await axios.get(`${baseurl}/api/cart`)
+      console.log(response)
+      if(response.status === 200){
+        console.log(response.data.cartData)
+        dispatch({ type: "LOAD_DATA", payload: response.data.cartData })
+      }}
+      catch(error){
+        console.log(error)
+      }
+    })()
+  }, [token])
+
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={{ dispatch, state }}>
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-export function useCart() {
+export const useCart = () => {
   return useContext(CartContext);
-}
+};
 
 const cartReducer = (state, { type, payload }) => {
+
   switch (type) {
+    case "LOAD_DATA":
+      return state = payload;
+
     case "ADD":
-      let flag = 0;
-      state.map((item)=>{
-        if(item.id===payload.id){
-          flag = 1
-        }
-      })
-      if(flag === 0){
-        state = [...state, { ...payload, cartQty: 1, inCart:true }];
-        return state;
-      }
-      console.log(state)
-      return state;
+      return state = [...state, {...payload, qty: 1}];
 
     case "INCREMENT":
-      return state.map((item) => {
-        if (item.id === payload.id) {
-          return { ...payload, cartQty: payload.cartQty + 1 };
+      return state = state.map(item => {
+        if(item._id === payload._id){
+          return {...payload, qty: payload.qty + 1}
+        } else {
+          return item
         }
-        return item;
-      });
+      })
 
     case "DECREMENT":
-      if (payload.cartQty > 1) {
-        return state.map((item) => {
-          if (item.id === payload.id) {
-            return { ...payload, cartQty: payload.cartQty - 1 };
-          }
-          return item;
-        });
-      } else {
-        return state.filter((item) => item.id !== payload.id);
-      }
+      return state = state.map(item => {
+        if(item._id === payload._id){
+          return {...payload, qty: payload.qty - 1}
+        } else {
+          return item
+        }
+      })
 
     case "REMOVE":
-      return state.filter((item) => {
-        return item.id !== payload.id;
-      });
-
+      return state = state.filter(item => item._id !== payload._id);
+      
     default:
       break;
-  }
+    }
 };
+

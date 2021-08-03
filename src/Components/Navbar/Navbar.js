@@ -1,8 +1,11 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/AuthContext";
 
 export default function Navbar() {
+  const {token, logoutHandler} = useAuth();
+
   return (
     <div>
       <nav className="navbar">
@@ -29,6 +32,20 @@ export default function Navbar() {
                 Cart
               </Link>
             </li>
+            {token?<li onClick={()=>logoutHandler()}>Log out</li>:
+            <li>
+              <Link className="nav-links" to="/login">
+                Login
+              </Link>
+            </li>
+            }
+            {token?"":
+            <li>
+              <Link className="nav-links" to="/signup">
+                Sign Up
+              </Link>
+            </li>
+            }
             
           </ul>
           

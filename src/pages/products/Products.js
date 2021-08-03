@@ -1,19 +1,49 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Products.css";
 import ProductCard from "../../Components/Cards/Product/ProductCard";
 import { useCart } from "../../Context/CartContext";
 import FilterDisplay from "../../Components/FilterDisplay/FilterDisplay";
 import { useFilter } from "../../Context/FilterContext";
 import { useWishlist } from "../../Context/WishlistContext";
+import { useAuth } from "../../Context/AuthContext";
+import { baseurl } from "../../utils/apiCalls";
+import {Link} from "react-router-dom"
+const axios = require('axios')
 
 export default function Products() {
-  const { dispatch } = useCart();
+  const { state, dispatch } = useCart();
   const { filteredData } = useFilter();
 
-  const wishlist = useWishlist();
+  const {wishState, addToWishList, removeFromWishList} = useWishlist();
+
+  const [idArray, setIdArray] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [toastStatus, setToastStatus] = useState(false)
+  const {token} = useAuth();
+
+  useEffect(() => {
+    setIdArray(
+      state.map((item) => {
+        return item.id || item._id;
+      })
+    );
+  }, [state]);
+
+  const addToCart = async (product) => {
+    console.log(product)
+    setloading(true);
+    const response = await axios.post(`${baseurl}/api/cart/${product._id}`, { });
+    
+    if (response.status === 200) {
+      console.log("Hogayaa bhaiiii")
+      dispatch({ type: "ADD", payload: product });
+      setloading(false);
+    }
+    setloading(false);
+  };
 
   function iconColor(item){
-    let flag = wishlist.state.find(product => product.id===item.id)
+    let flag = wishState.find(product => product._id===item._id)
     if(flag){
       return "red"
     }
@@ -31,15 +61,16 @@ export default function Products() {
             <div className="product-card-display">
               <ProductCard
                 item={item}
+                itemName={<Link to={`/products/${item._id}`} className="product-name">{item.name}</Link>}
                 buttonText={"Add to cart"}
-                buttonHandler={() => dispatch({ type: "ADD", payload: item })}
+                buttonHandler={() => addToCart(item)}
                 wishlistHandler={()=>
                   {
                   if(iconColor(item)==="white"){                 
-                  wishlist.dispatch({type:"ADD", payload: item})
+                  addToWishList(item)
                   }
                   else{
-                    wishlist.dispatch({type:"REMOVE", payload:item})
+                  removeFromWishList(item)
                   }
                 }}
                 wishlishtIconColor={iconColor(item)}

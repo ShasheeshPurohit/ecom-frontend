@@ -5,20 +5,29 @@ import {
   useState,
   useContext
 } from "react";
-import { productData } from "../Data/productData";
+import axios from 'axios';
+import { baseurl } from "../utils/apiCalls";
 
 const FilterContext = createContext();
 
 export const FilterProvider = ({ children }) => {
-  const [products, setProducts] = useState(productData);
+  const [products, setProducts] = useState([]);
+  const [status, setStatus] = useState("");
   const [{ fastDeliveryOnly, showAll, sortBy }, dispatch] = useReducer(
     filterFunc,
     {
       fastDeliveryOnly: false,
       showAll: true,
-      sortBy: null
+      sortBy: null,
     }
   );
+
+  useEffect(() => {
+    (async function(){
+      const response = await axios.get(`${baseurl}/api/products`)
+    setProducts(response.data.products)
+    })()
+  }, [])
 
   const sortingData = (productsList, sortBy) => {
     if (sortBy === "HIGH-TO-LOW") {
@@ -42,6 +51,17 @@ export const FilterProvider = ({ children }) => {
 
   const sortedData = sortingData(products, sortBy);
   const filteredData = filteringData(sortedData, fastDeliveryOnly, showAll);
+
+  const searchedFilteredDataFunc = (filteredDatas) => {
+    return filteredDatas.filter((value) => {
+      if (value.name.toLowerCase().includes(status.toLocaleLowerCase())) {
+        return value;
+      }
+      return null;
+    });
+  };
+
+  const searchedFilteredData = searchedFilteredDataFunc(filteredData)
 
   return (
     <FilterContext.Provider value={{ filteredData, dispatch }}>
