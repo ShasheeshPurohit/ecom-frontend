@@ -20,7 +20,7 @@ export default function Footer() {
           <a href="https://github.com/ShasheeshPurohit"><i className="fab fa-github github"></i>
           </a></li>
       </ul>
-      Developed by: Shasheesh Purohit
+     Developed by: Shasheesh Purohit
     </footer>
   );
 }
