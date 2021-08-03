@@ -27,18 +27,18 @@
   transform: scale(1.5);
 }
 
-.facebook:hover {
+.linkedIn{
   color: rgb(48, 48, 204);
 }
 
-.instagram:hover {
+.instagram {
   color: rgb(182, 0, 133);
 }
 
-.twitter:hover {
+.twitter{
   color: rgb(0, 104, 190);
 }
 
-.github:hover {
+.github{
   color: rgb(108, 28, 119);
 }
