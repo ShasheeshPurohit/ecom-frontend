@@ -1,15 +1,18 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import {useCart} from "../../Context/CartContext"
 import { useAuth } from "../../Context/AuthContext";
 
 export default function Navbar() {
   const {token, logoutHandler} = useAuth();
 
+  const {state} = useCart();
+
   return (
     <div>
       <nav className="navbar">
-        <div className="nav-brand">Mobilewaale</div>
+        <div className="nav-brand"><Link className="nav-brand-link" to="/">Mobilewaale</Link></div>
         <div className="nav-items">
           <ul className="nav-items-list">
             <li>
@@ -24,12 +27,12 @@ export default function Navbar() {
             </li>
             <li>
               <Link className="nav-links" to="/wishlist">
-               Wishlist
+              <i class="fas fa-heart"></i>
               </Link>
             </li>
             <li>
               <Link className="nav-links" to="/cart">
-                Cart
+              <i class="fas fa-shopping-cart"></i><div className="cart-length">{state!=0?state.length:""}</div>
               </Link>
             </li>
             {token?<li onClick={()=>logoutHandler()}>Log out</li>:

@@ -15,6 +15,12 @@
   margin: auto 0;
 }
 
+.nav-brand-link:link,
+.nav-brand-link:visited{
+  color: beige;
+  text-decoration: none;
+}
+
 .nav-items {
   display: flex;
 }
@@ -44,11 +50,19 @@
 }
 
 .nav-items-list li {
+  position: relative;
   margin: 0 0.5rem;
   cursor: pointer;
   padding: 0.5rem;
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
+}
+
+.cart-length{
+  position: absolute;
+  font-size: 0.8rem;
+  top: -0.01rem;
+  right: 0.1rem;
 }
 
 .nav-items-list li:hover {

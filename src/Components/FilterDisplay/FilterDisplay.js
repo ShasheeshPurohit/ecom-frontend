@@ -5,8 +5,9 @@ export default function FilterDisplay() {
   const { dispatch } = useFilter();
   return (
     <div className="filter-menu">
+      <legend>Sort by Price</legend>
       <div className="sort-options">
-        <legend>Sort by Price</legend>
+        
         <div>
           <label>
             <input
@@ -33,8 +34,9 @@ export default function FilterDisplay() {
         </div>
       </div>
 
+      <legend>More Filters</legend>
       <div className="filter-options">
-        <legend>More Filters</legend>
+        
         <div>
           <label>
             <input

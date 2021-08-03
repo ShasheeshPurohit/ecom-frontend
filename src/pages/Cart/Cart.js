@@ -60,7 +60,22 @@ export default function Cart() {
   return (
     <div>
       <div className="cart-display">
+      <div className="item-details">
       {totalPrice()===0?"No items in cart":<h4>Total: Rs. {totalPrice()}</h4>}
+      <div className="invoice-details">
+        <ul className="invoice-item-list">
+         {state.map((item)=>{
+           return(
+             <li>
+               <p className="invoice-item-name">{item.name} </p>
+               <p className="invoice-item-quantity">x{item.qty} </p>
+               <p className="invoice-item-price">Rs.{item.price*item.qty}</p>
+             </li>
+           );
+         })}
+        </ul>
+      </div>
+      </div>
       <div className="cart-items">
         {state.map((item) => {
           return (
