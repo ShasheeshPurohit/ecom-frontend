@@ -29,7 +29,7 @@ export const FilterProvider = ({ children }) => {
     setProducts(response.data.products)
       }
       catch(error){
-        console.log(error)
+        // console.log(error)
       }
     })()
   }, [])

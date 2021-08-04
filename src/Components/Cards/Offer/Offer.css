@@ -8,6 +8,8 @@
   margin: 1rem;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 
 .offer-card:hover {
@@ -15,15 +17,18 @@
 }
 
 .offer-img {
-  transform: scale(0.8);
-  margin-top: 5rem;
+  width: 100%;
+  height: 80%;
+  /* margin-top: 5rem; */
 }
 
 .offer-text {
   color: white;
   text-transform: uppercase;
+  position: absolute;
+  bottom: 0.5rem;
   font-size: 1.2rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 @media only screen and (max-width: 600px){

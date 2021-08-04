@@ -19,7 +19,7 @@ export default function Cart() {
   const increaseQuantity = async (product) => {
     setAdd(true);
     const response = await axios.post(`${baseurl}/api/cart/${product._id}/inc`, {});
-    console.log(response)
+    // console.log(response)
     if (response.status === 200) {
       dispatch({ type: "INCREMENT", payload: product });
       setAdd(false);

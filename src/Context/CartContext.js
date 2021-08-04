@@ -15,13 +15,13 @@ export const CartProvider = ({ children }) => {
     (async function () {
       try{
       const response = await axios.get(`${baseurl}/api/cart`)
-      console.log(response)
+      // console.log(response)
       if(response.status === 200){
-        console.log(response.data.cartData)
+        // console.log(response.data.cartData)
         dispatch({ type: "LOAD_DATA", payload: response.data.cartData })
       }}
       catch(error){
-        console.log(error)
+        // console.log(error)
       }
     })()
   }, [token])

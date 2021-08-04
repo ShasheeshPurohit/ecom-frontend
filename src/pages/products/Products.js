@@ -33,12 +33,12 @@ export default function Products() {
   }, [state]);
 
   const addToCart = async (product) => {
-    console.log(product)
+    // console.log(product)
     setloading(true);
     const response = await axios.post(`${baseurl}/api/cart/${product._id}`, { });
     
     if (response.status === 200) {
-      console.log("Hogayaa bhaiiii")
+      // console.log("Hogayaa bhaiiii")
       dispatch({ type: "ADD", payload: product });
       setloading(false);
     }
