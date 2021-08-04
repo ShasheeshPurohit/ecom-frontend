@@ -13,21 +13,21 @@ export default function Home() {
       <div className="offer-section">
         <Offer
           img={
-            "https://www.gizmochina.com/wp-content/uploads/2020/01/Samsung-Galaxy-S20-Ultra-5G-1-500x500.jpg"
+            "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=566&q=80"
           }
           offer={"25% off for Students!"}
         />
         <Offer
           img={
-            "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-12-purple-select-2021?wid=940&hei=1112&fmt=png-alpha&.v=1617130317000"
+            "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
           }
-          offer={"Get the new Iphone !"}
+          offer={"Offers on wearables !"}
         />
         <Offer
           img={
-            "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MTPM2_VW_34FR+watch-44-alum-gold-cell-6s_VW_34FR_WF_CO_GEO_IN?wid=1400&hei=1400&trim=1,0&fmt=p-jpg&qlt=95&.v=1599020626000,1601922648000"
+            "https://images.unsplash.com/photo-1596207891316-23851be3cc20?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80"
           }
-          offer={"Offers on wearables !"}
+          offer={"20% off on accesorries !"}
         />
       </div>
     </div>
