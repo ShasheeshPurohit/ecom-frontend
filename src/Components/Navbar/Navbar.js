@@ -37,7 +37,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link className="nav-links-sidebar" onClick={()=>setSidebar(!sidebar)} to="/cart">
-              <i class="fas fa-shopping-cart"></i><div className="cart-length">{state!=0?state.length:""}</div>
+              <i class="fas fa-shopping-cart"></i><div className="cart-length-mobile">{state!=0?state.length:""}</div>
               </Link>
             </li>
             

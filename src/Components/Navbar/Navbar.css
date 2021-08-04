@@ -114,6 +114,17 @@ i.fas.fa-bars.sidebar-button{
   border-bottom: 2px solid transparent;
   transition: all 0.2s;
   }
+
+  .nav-links-sidebar:link,
+  .nav-links-sidebar:visited{
+    position: relative;
+  }
+
+  .cart-length-mobile{
+    position: absolute;
+    top: -0.8rem;
+    right: -0.5rem;
+  }
 }
 
 /************************** Sidebar ***********************/
