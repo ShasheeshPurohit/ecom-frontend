@@ -76,5 +76,19 @@
       outline: none;
       margin-top: -1.5rem;
     }
+
+    .add-cart-button-product-page, .add-wishlist-button-product-page {
+      text-transform: uppercase;
+      cursor: pointer;
+      color: beige;
+      font-size: 80%;
+      width: max-content;
+      border-radius: 10px;
+      padding: 0.5rem;
+      border: none;
+      transition: all 0.2s;
+      outline: none;
+      margin-top: -1.5rem;
+    }
   }
 

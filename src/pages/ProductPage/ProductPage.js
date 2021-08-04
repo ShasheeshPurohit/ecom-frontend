@@ -40,9 +40,9 @@ export default function ProductPage(){
                 <div className="primary-product-details">
                 
                 <div className="product-page-image">
-                    <img src={productFind.image}></img>
+                    <img src={productFind.image} className="product-detail-image"></img>
                     <p className="product-page-title">{productFind.name}</p>
-                    <p className="product-page-title">Rs. {productFind.price}</p>
+                    <p className="product-page-price">Rs. {productFind.price}</p>
                 </div>
                 </div>
                 <div className="product-page-description">
