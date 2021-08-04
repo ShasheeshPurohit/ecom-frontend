@@ -11,7 +11,7 @@ export default function ProductCard({ item,itemName, buttonText, buttonHandler,w
       </div>
       <div className="product-details">
         <p className="product-name">{itemName}</p>
-        <p>Rs. {item.price}</p>
+        <p className="product-price">Rs. {item.price}</p>
       
       <div className="quantity-buttons" style={{display:displayQuantitySection}}>
       <i class="fas fa-minus" onClick={decrementButtonHandler}></i>

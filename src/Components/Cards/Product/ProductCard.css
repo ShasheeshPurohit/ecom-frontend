@@ -23,6 +23,19 @@
   }
 }
 
+@media only screen and (max-width: 400px){
+  .product-card{
+    height: 14rem;
+    width: 8rem;
+  }
+
+  .product-price{
+    font-size:60%;
+    margin-top: -0.5rem;
+  }
+
+}
+
 .product-image {
   height: 25rem;
   position: relative;

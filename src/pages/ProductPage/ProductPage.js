@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useState,useEffect } from "react";
 import { useFilter } from "../../Context/FilterContext";
+import { baseurl } from "../../utils/apiCalls";
 import {useCart} from "../../Context/CartContext"
 import {useWishlist} from "../../Context/WishlistContext";
 const axios = require('axios')
@@ -15,11 +16,16 @@ export default function ProductPage(){
   
     useEffect(() => {
       (async function () {
+        try{
         const response = await axios.get(
-          "https://approuter-mongoose.shasheeshpuroh1.repl.co/api/products"
+          `${baseurl}/api/products`
         );
         setProduct(response.data.products);
         setLoader(true);
+        }
+        catch(error){
+          console.log("error")
+        }
       })();
     }, []);
   

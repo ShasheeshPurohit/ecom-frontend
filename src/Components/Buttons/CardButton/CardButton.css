@@ -59,5 +59,22 @@
 
   
 
-  
+  @media only screen and (max-width: 400px){
+    .add-cart-button {
+      text-transform: uppercase;
+      cursor: pointer;
+      background-color: beige;
+      color: black;
+      width: 4rem;
+      border-radius: 5px;
+      font-weight: 700;
+      padding: 0.1rem;
+      border: none;
+      height: 2rem;
+      transition: all 0.2s;
+      font-size: 0.4rem;
+      outline: none;
+      margin-top: -1.5rem;
+    }
+  }
 
