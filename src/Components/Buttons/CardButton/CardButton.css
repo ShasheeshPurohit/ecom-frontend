@@ -62,7 +62,7 @@
   @media only screen and (max-width: 400px){
     .add-cart-button {
       text-transform: uppercase;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       cursor: pointer;
       background-color: beige;
       color: black;
