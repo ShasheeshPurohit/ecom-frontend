@@ -7,7 +7,8 @@ import { useFilter } from "../../Context/FilterContext";
 import { useWishlist } from "../../Context/WishlistContext";
 import { useAuth } from "../../Context/AuthContext";
 import { baseurl } from "../../utils/apiCalls";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import Loader from "../../Components/Loader/Loader"
 const axios = require('axios')
 
 export default function Products() {
@@ -56,7 +57,7 @@ export default function Products() {
         <FilterDisplay />
       </div>
       <div className="products-section">
-        {filteredData.map((item) => {
+        {(filteredData.map((item) => {
           return (
             <div className="product-card-display">
               <ProductCard
@@ -78,7 +79,7 @@ export default function Products() {
               />
             </div>
           );
-        })}
+        }))}
       </div>
     </div>
   );
