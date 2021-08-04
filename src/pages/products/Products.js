@@ -7,11 +7,13 @@ import { useFilter } from "../../Context/FilterContext";
 import { useWishlist } from "../../Context/WishlistContext";
 import { useAuth } from "../../Context/AuthContext";
 import { baseurl } from "../../utils/apiCalls";
-import {Link} from "react-router-dom";
+import {Link, Navigate, useNavigate} from "react-router-dom";
 import Loader from "../../Components/Loader/Loader"
 const axios = require('axios')
 
 export default function Products() {
+
+  const navigate = useNavigate();
   const { state, dispatch } = useCart();
   const { filteredData } = useFilter();
 
@@ -61,6 +63,7 @@ export default function Products() {
           return (
             <div className="product-card-display">
               <ProductCard
+              
                 item={item}
                 itemName={<Link to={`/products/${item._id}`} className="product-name">{item.name}</Link>}
                 buttonText={"Add to cart"}

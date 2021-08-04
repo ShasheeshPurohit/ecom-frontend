@@ -3,7 +3,10 @@ import "./Home.css";
 import Jumbotron from "../../Components/Jumbotron/Jumbotron";
 import Offer from "../../Components/Cards/Offer/Offer";
 
+
 export default function Home() {
+  
+
   return (
     <div className="home">
       <Jumbotron />

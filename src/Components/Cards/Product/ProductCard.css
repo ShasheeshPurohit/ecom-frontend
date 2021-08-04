@@ -14,8 +14,8 @@
 
 @media only screen and (max-width: 600px){
   .product-card{
-    height: 17rem;
-    width: 12rem;
+    height: 22rem;
+    width: 14rem;
   }
 
   .product-details{
@@ -25,7 +25,7 @@
 
 @media only screen and (max-width: 400px){
   .product-card{
-    height: 14rem;
+    height: 16rem;
     width: 8rem;
   }
 
@@ -34,13 +34,18 @@
     margin-top: -0.5rem;
   }
 
+  .product-name{
+    margin: 0.8rem;
+  }
+
 }
 
 .product-image {
-  height: 25rem;
+  height: 24rem;
+  
   position: relative;
   /* border: 1px solid green; */
-  margin-bottom: -2rem;
+  margin-bottom: -1rem;
   width: 100%;
   /* border: 1px solid red; */
 }

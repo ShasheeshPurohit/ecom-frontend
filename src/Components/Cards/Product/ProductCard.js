@@ -1,8 +1,12 @@
 import React from "react";
 import CardButton from "../../Buttons/CardButton/CardButton";
 import "./ProductCard.css";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ item,itemName, buttonText, buttonHandler,wishlishtIconColor, wishlistHandler, displayIcon, displayQuantitySection, quantity, incrementButtonHandler, decrementButtonHandler}) {
+  
+  const navigate = useNavigate();
+  
   return (
     <div className="product-card">
       <div className="product-image">
