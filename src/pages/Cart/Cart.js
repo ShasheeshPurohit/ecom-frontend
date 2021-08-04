@@ -60,8 +60,8 @@ export default function Cart() {
   return (
     <div>
       <div className="cart-display">
-      <div className="item-details">
-      {totalPrice()===0?"No items in cart":<h4>Total: Rs. {totalPrice()}</h4>}
+      <div className="item-details" style={{display:state.length===0?"none":"initial"}}>
+      {totalPrice()===0?"":<h4>Total: Rs. {totalPrice()}</h4>}
       <div className="invoice-details">
         <ul className="invoice-item-list">
          {state.map((item)=>{
@@ -77,7 +77,11 @@ export default function Cart() {
       </div>
       </div>
       <div className="cart-items">
-        {state.map((item) => {
+
+        {state.length===0?<div className="empty-logo">
+          <i className="fab fa-dropbox"></i>
+          <p>Empty cart, add something in it</p>
+        </div>:(state.map((item) => {
           return (
             <div key={item._id} className="cart-product-display">
               <ProductCard
@@ -92,7 +96,7 @@ export default function Cart() {
               />
             </div>
           );
-        })}
+        }))}
         </div>
       </div>
     </div>
