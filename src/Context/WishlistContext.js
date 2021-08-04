@@ -15,30 +15,30 @@ export function WishlistProvider({ children }) {
       const response = await axios.get(`${baseurl}/api/wishlist`)
       dispatch({ type: "LOAD_WISHLIST_DATA", payload: response.data.Wishlist })
       }catch(error){
-        console.log(error)
+        // console.log(error)
       }
       
     })()
   }, [token])
 
   const addToWishList = async (product) => {
-    console.log(product)
+    // console.log(product)
     const response = await axios.post(`${baseurl}/api/wishlist/${product._id}`, {})
     if (response.status === 200) {
-      console.log("added")
+      // console.log("added")
       dispatch({ type: "ADD", payload: product })
     } else {
-      console.log("error")
+      // console.log("error")
     }
   }
 // console.log(state)
   const removeFromWishList = async (product) => {
-    console.log(product)
+    // console.log(product)
     const response = await axios.delete(`${baseurl}/api/wishlist/${product._id}`)
     if (response.status === 200) {
       dispatch({ type: "REMOVE", payload: product })
     } else {
-      console.log("error")
+      // console.log("error")
     }
   }
 

@@ -23,12 +23,12 @@ export default function Signup(){
                 },
             });
             if(response.status === 200){
-                console.log(username, password)
+                // console.log(username, password)
                 return loginHandler(username, password)
             }
         }
         catch(error){
-            console.log(error.response);   
+            // console.log(error.response);   
         }
     }
 

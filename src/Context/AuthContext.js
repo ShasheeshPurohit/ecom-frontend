@@ -38,20 +38,20 @@ export const AuthProvider = ({children}) => {
             "Content-Type" : "application/json" 
          }
         })
-        console.log(response.data.status)
+        // console.log(response.data.status)
         setLoginState(response.data.status)
         if(response.data.status === "login success"){ 
             localStorage.setItem("token", JSON.stringify( response.data.token));
             // localStorage.setItem("login", JSON.stringify({loginStatus: true, token: response.data.token}));
             setToken(response.data.token)
             setLoginState("login success")
-            console.log("sucess")
+            // console.log("sucess")
             navigate("/")
         }
         }catch(error){
-            console.log("error aagaya bhai")
-            console.log(error.response)
-            console.log(error.response.data.status)
+            // console.log("error aagaya bhai")
+            // console.log(error.response)
+            // console.log(error.response.data.status)
         }
     }
     

@@ -67,7 +67,7 @@
 .product-name:link,
 .product-name:visited{
   font-size: 60%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin: 1;
 }
 
