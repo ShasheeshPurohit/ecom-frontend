@@ -60,7 +60,7 @@ export default function Cart() {
   return (
     <div>
       <div className="cart-display">
-      <div className="item-details" style={{display:state.length===0?"none":"initial"}}>
+      {/* <div className="item-details" style={{display:state.length===0?"none":"initial"}}>
       {totalPrice()===0?"":<h4>Total: Rs. {totalPrice()}</h4>}
       <div className="invoice-details">
         <ul className="invoice-item-list">
@@ -75,9 +75,10 @@ export default function Cart() {
          })}
         </ul>
       </div>
-      </div>
+      </div> */}
+      <div className="item-details" style={{display:state.length===0?"none":"initial"}}>
+      {totalPrice()===0?"":<h4>Total: Rs. {totalPrice()}</h4>}</div>
       <div className="cart-items">
-
         {state.length===0?<div className="empty-logo">
           <i className="fab fa-dropbox"></i>
           <p>Empty cart, add something in it</p>

@@ -65,7 +65,7 @@ export default function Products() {
               <ProductCard
               
                 item={item}
-                itemName={<Link to={`/products/${item._id}`} className="product-name">{item.name}</Link>}
+                itemName={<Link to={`/products/${item._id}`} className="product-name">{item.name.substring(0,10)}</Link>}
                 buttonText={"Add to cart"}
                 buttonHandler={() => addToCart(item)}
                 wishlistHandler={()=>

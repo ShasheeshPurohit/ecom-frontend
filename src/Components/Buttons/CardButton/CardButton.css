@@ -13,7 +13,7 @@
     height: 2rem;
     transition: all 0.2s;
     outline: none;
-    margin-top: -1.5rem;
+  
   }
   
   .add-cart-button:hover {
@@ -46,7 +46,6 @@
     border: none;
     transition: all 0.2s;
     outline: none;
-    margin-top: -1.5rem;
   }
   
   .add-cart-button-product-page:hover, .add-wishlist-button-product-page:hover {
@@ -61,21 +60,8 @@
 
   @media only screen and (max-width: 400px){
     .add-cart-button {
-      text-transform: uppercase;
-      margin-top: 1.2rem;
-      cursor: pointer;
-      background-color: beige;
-      color: black;
-      width: 4rem;
-      border-radius: 5px;
-      font-weight: 700;
-      padding: 0.1rem;
-      border: none;
-      height: 2rem;
-      transition: all 0.2s;
-      font-size: 0.4rem;
-      outline: none;
-      margin-top: -1.5rem;
+      font-size: 0.8rem;
+
     }
 
     .add-cart-button-product-page, .add-wishlist-button-product-page {
@@ -89,7 +75,7 @@
       border: none;
       transition: all 0.2s;
       outline: none;
-      margin-top: -1.5rem;
+
     }
   }
 
